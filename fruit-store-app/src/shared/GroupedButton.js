@@ -37,14 +37,18 @@ class GroupedButtons extends React.Component {
                     onClick={this.handleIncrement}>
                     +
                 </Button>
-                <Button style={{ color: '#000' }} disabled>
-                    {this.state.counter}
-                </Button>
-                <Button
-                    style={{ fontSize: '16px', backgroundColor: '#eee' }}
-                    onClick={this.handleDecrement}>
-                    -
-                </Button>
+                {displayCounter && (
+                    <Button style={{ color: '#000' }} disabled>
+                        {this.state.counter}
+                    </Button>
+                )}
+                {displayCounter && (
+                    <Button
+                        style={{ fontSize: '16px', backgroundColor: '#eee' }}
+                        onClick={this.handleDecrement}>
+                        -
+                    </Button>
+                )}
             </ButtonGroup>
         );
     }
