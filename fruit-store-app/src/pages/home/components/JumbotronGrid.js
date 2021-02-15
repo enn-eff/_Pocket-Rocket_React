@@ -1,17 +1,18 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import Jumbotron from './JumbotronSlider';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
+import Jumbotron from './JumbotronSlider';
+
 const padding_custom = '0 ';
-const useStyles = makeStyles((theme) => ({
+
+const useStyles = makeStyles(() => ({
     root: {
         flexGrow: 1,
     },
-    textContainer: {
+    contextContainer: {
         bottom: '0px',
         display: 'flex',
         flexDirection: 'column',
@@ -29,7 +30,7 @@ const CenteredGrid = () => {
                 <Grid
                     item
                     xs={3}
-                    className={classes.textContainer}
+                    className={classes.contextContainer}
                     style={{
                         backgroundColor: '#f0950b',
                         padding: padding_custom,
@@ -67,9 +68,8 @@ const CenteredGrid = () => {
                 <Grid
                     item
                     xs={9}
-                    className={classes.textContainer}
+                    className={classes.contextContainer}
                     style={{ padding: padding_custom }}>
-                    {/* <Paper className={classes.paper}>xs=6</Paper> */}
                     <Jumbotron />
                 </Grid>
             </Grid>

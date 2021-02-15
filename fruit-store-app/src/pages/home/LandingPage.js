@@ -1,15 +1,16 @@
-import React, { useEffect, useState, useContext } from 'react';
-
-import FetchingDataService from '../../services/http';
+import React, { useEffect, useContext } from 'react';
 import CarouselComponent from './components/Carousel';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+
+import FetchingDataService from '../../services/http';
 import CenteredGrid from './components/JumbotronGrid';
 import CartProducts from './components/CartProducts';
 import { GlobalContext } from '../../context/GlobalProvider';
 
 const width_proportion = '80%';
+
 const HomeComponent = (props) => {
     const {
         cartProducts,
@@ -17,7 +18,9 @@ const HomeComponent = (props) => {
         addProductToCart,
         storeApiResponse,
     } = useContext(GlobalContext);
+
     const service = new FetchingDataService();
+
     useEffect(() => {
         service
             .request()
@@ -55,7 +58,7 @@ const HomeComponent = (props) => {
         <React.Fragment>
             <div
                 className='App'
-                style={{ marginBottom: '20px', marginTop: '48px' }}>
+                style={{ marginBottom: '8rem', marginTop: '48px' }}>
                 <CssBaseline />
                 <Container minWidth='md'>
                     <div style={{ margin: '6% 0 10% 0', height: '25rem' }}>
@@ -68,9 +71,7 @@ const HomeComponent = (props) => {
                             fontSize: '20px',
                             fontFamily: 'cursive',
                         }}>
-                        <h1 style={{ textDecoration: 'underline' }}>
-                            Featured Products
-                        </h1>
+                        <h1>Featured Products</h1>
                     </Typography>
 
                     <div
@@ -79,6 +80,8 @@ const HomeComponent = (props) => {
                             position: 'relative',
                             display: 'inline-block',
                             textAlign: 'center',
+                            paddingTop: '2rem',
+                            marginBottom: '2rem',
                         }}>
                         <CarouselComponent itemsJson={imageURLsAr} />
                     </div>
@@ -89,10 +92,9 @@ const HomeComponent = (props) => {
                             fontWeight: 'bold',
                             fontSize: '20px',
                             fontFamily: 'cursive',
+                            paddingTop: '2rem',
                         }}>
-                        <h1 style={{ textDecoration: 'underline' }}>
-                            Add your favourites to the cart
-                        </h1>
+                        <h1>Add your favourites to the cart</h1>
                     </Typography>
                     <div>
                         {apiResponse && apiResponse.data && (

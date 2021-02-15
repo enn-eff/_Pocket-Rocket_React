@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         backgroundColor: 'black',
-        height: '10vh',
+        height: '8.5vh',
     },
     title: {
         flexGrow: 1,

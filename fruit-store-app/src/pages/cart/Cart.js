@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
-
-import CartList from './components/CartList';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
-import BillingSection from './components/BillingSection';
 import { Link } from '@material-ui/core';
-import { GlobalContext } from '../../context/GlobalProvider';
 
-const Cart = (props) => {
+import BillingSection from './components/BillingSection';
+import { GlobalContext } from '../../context/GlobalProvider';
+import CartList from './components/CartList';
+
+const Cart = () => {
     const { cartProducts } = useContext(GlobalContext);
 
     if (cartProducts.length === 0) {
@@ -34,9 +34,9 @@ const Cart = (props) => {
                 style={{
                     display: 'flex',
                     flexDirection: 'row',
-                    margin: '8% 0',
+                    margin: '8% 10%',
                 }}>
-                <div style={{ flexGrow: '3' }}>
+                <div style={{ flexGrow: '3', margin: '0 4%' }}>
                     <CartList />
                 </div>
 

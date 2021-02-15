@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -6,8 +6,9 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import GroupedButtons from '../../../shared/GroupedButton';
 import { Button } from '@material-ui/core';
+
+import GroupedButtons from '../../../shared/GroupedButton';
 
 const useStyles = makeStyles({
     media: {
@@ -100,7 +101,9 @@ export default function Products(props) {
                                                 data-id='img'
                                                 style={{
                                                     color: '#fff',
-                                                    backgroundColor: '#3F51B5',
+                                                    backgroundColor: '#000',
+                                                    margin: '1rem 0',
+                                                    padding: '0.8rem',
                                                 }}
                                                 onClick={(e) =>
                                                     handleClick(e, product)

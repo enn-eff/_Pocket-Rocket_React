@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
+
 import { GlobalContext } from '../../../context/GlobalProvider';
 
-export default function TotalPrice(props) {
+const TotalPrice = () => {
     const { cartProducts, cartBasket } = useContext(GlobalContext);
     const [total, setTotal] = useState(0);
+
     useEffect(() => {
         let price = 0;
         cartProducts.length > 0 &&
@@ -11,11 +13,15 @@ export default function TotalPrice(props) {
         price += cartBasket;
         setTotal(price);
     }, [cartBasket, cartProducts]);
+
     return (
         <div>
-            <p style={{ fontSize: 30, textAlign: 'right' }}>
-                Total Price: {Math.floor(total * 100) / 100}
+            <hr />
+            <p style={{ fontSize: 24, textAlign: 'right' }}>
+                Total Price: &euro;{Math.floor(total * 100) / 100}
             </p>
         </div>
     );
-}
+};
+
+export default TotalPrice;
