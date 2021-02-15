@@ -1,5 +1,5 @@
-To run the project: 
-	Run:	
-		- npm init
-		- npm start
-		
+# To Run the project
+
+## Run the following commands
+### - npm init
+### - npm start
