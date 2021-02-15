@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-
 import { makeStyles } from '@material-ui/core/styles';
-import { GlobalContext } from '../context/GlobalProvider';
 import Badge from '@material-ui/core/Badge';
 import { withStyles } from '@material-ui/core/styles';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+
+import { GlobalContext } from '../context/GlobalProvider';
 
 const StyledBadge = withStyles((theme) => ({
     badge: {
@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
 export default function CartIcon() {
     const classes = useStyles();
     const { cartProducts } = useContext(GlobalContext);
+
     return (
         <div className={classes.root}>
             <StyledBadge

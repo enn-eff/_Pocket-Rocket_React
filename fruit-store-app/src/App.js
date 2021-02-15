@@ -1,5 +1,4 @@
 import React from 'react';
-import './shared/components/fontAwesomeIcons';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import DenseAppBar from './shared/components/nav/NavigationBar';
 import Cart from './pages/cart/Cart';

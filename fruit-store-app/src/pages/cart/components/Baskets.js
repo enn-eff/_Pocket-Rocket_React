@@ -1,30 +1,27 @@
 import React, { useContext, useEffect, useState } from 'react';
-
-import { makeStyles } from '@material-ui/core/styles';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
+
 import { GlobalContext } from '../../../context/GlobalProvider';
 
-const useStyles = makeStyles({
-    media: {
-        height: 200,
-    },
-});
-
-export default function Baskets(props) {
+const Baskets = () => {
     const { addBasketToCart, apiResponse } = useContext(GlobalContext);
+
     const [basket, setBasket] = useState('Standard basket');
+
     useEffect(() => {
         addBasketToCart(3.99);
     }, []);
+
     const handleChange = (event) => {
         setBasket(event.target.value);
         let baskets =
             apiResponse &&
             apiResponse.data &&
             apiResponse.data.filter((bask) => bask.type === 'Basket');
+
         for (let i = 0; i < baskets.length; i++) {
             if (baskets[i].name === event.target.value) {
                 addBasketToCart(baskets[i].price);
@@ -82,4 +79,6 @@ export default function Baskets(props) {
             </FormControl>
         </div>
     );
-}
+};
+
+export default Baskets;

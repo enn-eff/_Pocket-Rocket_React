@@ -4,6 +4,7 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 
 class GroupedButtons extends React.Component {
     state = { counter: 0 };
+
     handleIncrement = () => {
         if (this.state.counter < this.props.limit) {
             this.setState(
@@ -25,6 +26,7 @@ class GroupedButtons extends React.Component {
             );
         }
     };
+
     render() {
         const displayCounter = this.state.counter > 0;
 
